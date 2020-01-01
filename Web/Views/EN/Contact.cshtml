@@ -1,0 +1,142 @@
+﻿
+@{
+    ViewBag.Title = "Contact";
+    Layout = "~/Views/EN/Shared/_Layout.cshtml";
+}
+
+<div class="page-head-img" style="">
+    <div class="main-map" style="overflow: hidden; max-height: 346px">
+
+        <div id="map" class="map" style="min-height: 346px; overflow: unset"></div>
+        <div class="container" >
+            <div class="top-telephone contact-top-telephone">
+                <h5>+44-7501-655-600</h5>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container page-container">
+    <div class="row page-header contact-header pb-2 pt-2" style="background-color: #4eb7cb; opacity: .8;">
+        <div class="col-md-12 pl-0 pr-0">
+            <div class="float-left pl-0" style="color:#fff;">
+                <img src="/Content/img/arrow-right.png" />
+                <a style="" href="/">Home</a> / <a href="/EN/Contact">Contact</a>
+            </div>
+            <div class="float-right text-right">
+                <a href="#"><img src="/Content/img/arrow-left.png" /> Turn Back</a>
+            </div>
+        </div>
+
+    </div>
+    <div class="row" style="margin-top: -5px;">
+        <div class="page-content contact-page col-xl-12 white p-5">
+            <div class="mt-3">
+                <h5 style="font-size: 20px;margin-bottom: 0; font-family: 'Zona Pro ExtraLight';">NOA MedCare</h5>
+                <h4 class="font-weight-bolder" style="font-family: 'Zona Pro';">Contact Us</h4>
+                <span class=" mt-3 d-block" style="border-top: 5px solid #6ccbdd; border-radius: 5px; width: 40px;"></span>
+                <div class="row mt-5">
+                    <div class="col-xl-5 col-sm-12">
+                        <h5 class="font-weight-bold pb-2" style="font-family: 'Zona Pro';">Contact</h5>
+                        <span class="line-border d-block"></span>
+                        <h6 class="mt-3"  style="font-family: Ubuntu; font-weight: normal;">
+                            3 Brentwood Grove NE28 6PT <br />
+                            Newcastle UK
+                        </h6>
+                        <h6 class="mt-3 font-weight-normal" style="font-family: Ubuntu; font-weight: normal;"><img class="mr-2" src="/Content/img/iletisim-telephone.png" /> +44 7501 655600</h6>
+                        <h6 class="mt-3 font-weight-normal" style="font-family: Ubuntu; font-weight: normal;"><img class="mr-2" src="/Content/img/iletisim-mail.png" /> info@noamedcare.co.uk</h6>
+                        <h6 class="mt-3 font-weight-normal" style="font-family: Ubuntu; font-weight: normal;"><img class="mr-2" src="/Content/img/iletisim-location.png" /> Get Directions</h6>
+                        <h6 class="mt-3 font-weight-normal" style="font-family: Ubuntu; font-weight: normal;"><img class="mr-2" src="/Content/img/iletisim-clock.png" /> Monday Saturday : 09:00 - 21:00</h6>
+                    </div>
+                    <div class="col-xl-7 col-sm-12">
+                        <h5 class=" font-weight-bold pb-2" style="font-family: 'Zona Pro';">Form</h5>
+                        <span class="line-border d-block"></span>
+                        <div class="row mt-5" style="font-family: Ubuntu;">
+                            <div class="col-md-12">
+                                <div class="form-group"><input type="text" class="form-control" placeholder="Name & Surname" /></div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group"><input type="text" class="form-control" placeholder="Phone" /></div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group"><input type="text" class="form-control" placeholder="Mail" /></div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group"><textarea class="form-control" placeholder="Message"></textarea></div>
+                            </div>
+                            <div class="col-md-12 mt-4">
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-info btn-block" style="font-size: 1.1rem;"><img class="mr-1" src="/Content/img/send-icon.png" /> Send</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section scripts
+{
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDI_ae35ctfOVzigrSJ5-Me_-_prs7Stu4"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script>
+        $(function () {
+            var map_site_name = "İnfoMED",
+                map_site_icon = "/Content/img/map-pin.png",
+                map_site_lat = 54.991868, 
+                map_site_lng = -1.520990,
+                map_site_html = '<h3 style="text-align: center;"> NOA Med</h3><p style="text-align: center;"> ' +
+                    '3 Brentwood Grove NE28 6PT ' +
+                    'Newcastle UK <br> info@noamedcare.co.uk <br> +44 7501 655600</p>';
+
+
+            if ($('#map').length > 0) {
+                var map_customize = {
+                    title: map_site_name,
+                    html: map_site_html,
+                    icon: map_site_icon,
+                    lat: map_site_lat,
+                    lng: map_site_lng,
+                };
+
+                function initMap() {
+
+                    var map = new google.maps.Map(document.getElementById('map'), {
+                        center: new google.maps.LatLng(map_customize.lat, map_customize.lng),
+                        zoom: 15,
+                        zoomControl: false,
+                        mapTypeControl: false,
+                        scaleControl: false,
+                        streetViewControl: false,
+                        rotateControl: false,
+                        fullscreenControl: false
+                    });
+
+                    var infoWindow = new google.maps.InfoWindow({
+                        content: map_customize.html
+                    });
+
+                    var marker = new google.maps.Marker({
+                        draggable: false,
+                        map: map,
+                        position: new google.maps.LatLng(parseFloat(map_customize.lat), parseFloat(map_customize.lng)),
+                        title: map_customize.title,
+                        icon: {
+                            scaledSize: new google.maps.Size(95, 94),
+                            url: map_customize.icon
+                        }
+                    });
+
+                    marker.addListener('click', function () {
+                        infoWindow.open(map, marker);
+                    });
+
+                }
+
+                google.maps.event.addDomListener(window, 'load', initMap());
+
+            }
+
+        })
+    </script>
+}

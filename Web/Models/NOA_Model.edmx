@@ -1,0 +1,569 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="NOAModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Blog">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LanguageID" Type="int" />
+          <Property Name="Title" Type="nvarchar" MaxLength="500" />
+          <Property Name="CategoryID" Type="int" />
+          <Property Name="Content" Type="nvarchar(max)" />
+          <Property Name="ShortContent" Type="nvarchar" MaxLength="500" />
+          <Property Name="DefaultImage" Type="nvarchar" MaxLength="500" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="StatusID" Type="int" />
+          <Property Name="IsHomePage" Type="bit" />
+          <Property Name="InsertUserID" Type="int" />
+          <Property Name="InsertDate" Type="datetime" />
+          <Property Name="DeleteUserID" Type="int" />
+          <Property Name="DeleteDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Constant">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TypeID" Type="int" />
+          <Property Name="Name" Type="nvarchar" MaxLength="255" />
+          <Property Name="TotalName" Type="nvarchar" MaxLength="1000" />
+          <Property Name="ParentID" Type="int" />
+          <Property Name="LanguageID" Type="int" />
+          <Property Name="StatusID" Type="int" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="ShortName" Type="nvarchar" MaxLength="255" />
+          <Property Name="Image" Type="nvarchar" MaxLength="255" />
+          <Property Name="TopParent" Type="int" />
+          <Property Name="PageOrder" Type="int" />
+          <Property Name="InsertUserID" Type="int" />
+          <Property Name="InsertDate" Type="datetime" />
+          <Property Name="DeleteUserID" Type="int" />
+          <Property Name="DeleteDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Contact">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LanguageID" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="500" />
+          <Property Name="Adress" Type="nvarchar" MaxLength="500" />
+          <Property Name="Tel" Type="nvarchar" MaxLength="50" />
+          <Property Name="Fax" Type="nvarchar" MaxLength="50" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="Link" Type="nvarchar" MaxLength="500" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="StatusID" Type="int" />
+          <Property Name="City" Type="nvarchar" MaxLength="255" />
+          <Property Name="Tel2" Type="nvarchar" MaxLength="50" />
+          <Property Name="Email2" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="ContactForm">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FullName" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="Telephone" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Message" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="LanguageID" Type="int" Nullable="false" />
+          <Property Name="InsertDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="OpeningHours">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Gun1" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="Gun2" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="Gun3" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="Gun4" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="Gun5" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="Gun6" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="Gun7" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="LanguageID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Page">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TypeID" Type="int" />
+          <Property Name="ParentID" Type="int" />
+          <Property Name="LanguageID" Type="int" />
+          <Property Name="Name" Type="nvarchar" MaxLength="255" />
+          <Property Name="Content" Type="nvarchar(max)" />
+          <Property Name="PageUrl" Type="nvarchar" MaxLength="255" />
+          <Property Name="Title" Type="nvarchar" MaxLength="255" />
+          <Property Name="StatusID" Type="int" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="InsertUserID" Type="int" />
+          <Property Name="InsertDate" Type="datetime" />
+          <Property Name="DeleteUserID" Type="int" />
+          <Property Name="DeleteDate" Type="datetime" />
+          <Property Name="IsDefault" Type="bit" />
+          <Property Name="PageOrder" Type="int" />
+          <Property Name="ShortContent" Type="nvarchar" MaxLength="500" />
+          <Property Name="TotalName" Type="nvarchar" MaxLength="1500" />
+          <Property Name="FileURL" Type="nvarchar" MaxLength="500" />
+          <Property Name="ConstantID" Type="int" />
+        </EntityType>
+        <EntityType Name="PageFile">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PageID" Type="int" Nullable="false" />
+          <Property Name="FileName" Type="nvarchar" MaxLength="500" />
+          <Property Name="FileType" Type="nvarchar" MaxLength="255" />
+          <Property Name="FileURL" Type="nvarchar" MaxLength="255" />
+          <Property Name="IsDefault" Type="bit" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="StatusID" Type="int" />
+          <Property Name="InsertUserID" Type="int" />
+          <Property Name="InsertDate" Type="datetime" />
+          <Property Name="DeleteUserID" Type="int" />
+          <Property Name="DeleteDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Slider">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LanguageID" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="1000" />
+          <Property Name="URL" Type="nvarchar" MaxLength="255" />
+          <Property Name="StatusID" Type="int" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="DeleteUserID" Type="int" />
+          <Property Name="DeleteDate" Type="datetime" />
+          <Property Name="InsertUserID" Type="int" />
+          <Property Name="InsertDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FirstName" Type="varchar" MaxLength="255" />
+          <Property Name="LastName" Type="varchar" MaxLength="255" />
+          <Property Name="FullName" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="Username" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="Password" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="Email" Type="varchar" MaxLength="255" />
+          <Property Name="Gender" Type="int" />
+          <Property Name="Avatar" Type="varchar" MaxLength="255" />
+          <Property Name="StatusID" Type="int" Nullable="false" />
+          <Property Name="WebSiteID" Type="int" />
+          <Property Name="DefaultPage" Type="int" />
+        </EntityType>
+        <Function Name="spGET_MENU" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="LanguageID" Type="int" Mode="In" />
+        </Function>
+        <EntityContainer Name="NOAModelStoreContainer">
+          <EntitySet Name="Blog" EntityType="Self.Blog" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Constant" EntityType="Self.Constant" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Contact" EntityType="Self.Contact" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ContactForm" EntityType="Self.ContactForm" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OpeningHours" EntityType="Self.OpeningHours" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Page" EntityType="Self.Page" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PageFile" EntityType="Self.PageFile" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Slider" EntityType="Self.Slider" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="NOAModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Blog">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LanguageID" Type="Int32" />
+          <Property Name="Title" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="CategoryID" Type="Int32" />
+          <Property Name="Content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ShortContent" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="DefaultImage" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="StatusID" Type="Int32" />
+          <Property Name="IsHomePage" Type="Boolean" />
+          <Property Name="InsertUserID" Type="Int32" />
+          <Property Name="InsertDate" Type="DateTime" Precision="3" />
+          <Property Name="DeleteUserID" Type="Int32" />
+          <Property Name="DeleteDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Constant">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TypeID" Type="Int32" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="TotalName" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="ParentID" Type="Int32" />
+          <Property Name="LanguageID" Type="Int32" />
+          <Property Name="StatusID" Type="Int32" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="ShortName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Image" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="TopParent" Type="Int32" />
+          <Property Name="PageOrder" Type="Int32" />
+          <Property Name="InsertUserID" Type="Int32" />
+          <Property Name="InsertDate" Type="DateTime" Precision="3" />
+          <Property Name="DeleteUserID" Type="Int32" />
+          <Property Name="DeleteDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Contact">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LanguageID" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Adress" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Tel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Fax" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Link" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="StatusID" Type="Int32" />
+          <Property Name="City" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Tel2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Email2" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ContactForm">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FullName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Telephone" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Message" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LanguageID" Type="Int32" Nullable="false" />
+          <Property Name="InsertDate" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="OpeningHours">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Gun1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Gun2" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Gun3" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Gun4" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Gun5" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Gun6" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Gun7" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LanguageID" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Page">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TypeID" Type="Int32" />
+          <Property Name="ParentID" Type="Int32" />
+          <Property Name="LanguageID" Type="Int32" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PageUrl" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Title" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="StatusID" Type="Int32" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="InsertUserID" Type="Int32" />
+          <Property Name="InsertDate" Type="DateTime" Precision="3" />
+          <Property Name="DeleteUserID" Type="Int32" />
+          <Property Name="DeleteDate" Type="DateTime" Precision="3" />
+          <Property Name="IsDefault" Type="Boolean" />
+          <Property Name="PageOrder" Type="Int32" />
+          <Property Name="ShortContent" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="TotalName" Type="String" MaxLength="1500" FixedLength="false" Unicode="true" />
+          <Property Name="FileURL" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="ConstantID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="PageFile">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PageID" Type="Int32" Nullable="false" />
+          <Property Name="FileName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="FileType" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="FileURL" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="IsDefault" Type="Boolean" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="StatusID" Type="Int32" />
+          <Property Name="InsertUserID" Type="Int32" />
+          <Property Name="InsertDate" Type="DateTime" Precision="3" />
+          <Property Name="DeleteUserID" Type="Int32" />
+          <Property Name="DeleteDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Slider">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LanguageID" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="URL" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="StatusID" Type="Int32" Nullable="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="DeleteUserID" Type="Int32" />
+          <Property Name="DeleteDate" Type="DateTime" Precision="3" />
+          <Property Name="InsertUserID" Type="Int32" />
+          <Property Name="InsertDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="LastName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="FullName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Username" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Gender" Type="Int32" />
+          <Property Name="Avatar" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="StatusID" Type="Int32" Nullable="false" />
+          <Property Name="WebSiteID" Type="Int32" />
+          <Property Name="DefaultPage" Type="Int32" />
+        </EntityType>
+        <EntityContainer Name="NOAEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Blog" EntityType="Self.Blog" />
+          <EntitySet Name="Constant" EntityType="Self.Constant" />
+          <EntitySet Name="Contact" EntityType="Self.Contact" />
+          <EntitySet Name="ContactForm" EntityType="Self.ContactForm" />
+          <EntitySet Name="OpeningHours" EntityType="Self.OpeningHours" />
+          <EntitySet Name="Page" EntityType="Self.Page" />
+          <EntitySet Name="PageFile" EntityType="Self.PageFile" />
+          <EntitySet Name="Slider" EntityType="Self.Slider" />
+          <EntitySet Name="Users" EntityType="Self.Users" />
+          <FunctionImport Name="spGET_MENU" ReturnType="Collection(NOAModel.spGET_MENU_Result)">
+            <Parameter Name="LanguageID" Mode="In" Type="Int32" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="spGET_MENU_Result">
+        <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="Int32" Name="ParentID" Nullable="true" />
+          <Property Type="String" Name="Name" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="PageUrl" Nullable="true" MaxLength="255" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="NOAModelStoreContainer" CdmEntityContainer="NOAEntities">
+          <EntitySetMapping Name="Blog">
+            <EntityTypeMapping TypeName="NOAModel.Blog">
+              <MappingFragment StoreEntitySet="Blog">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="LanguageID" ColumnName="LanguageID" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+                <ScalarProperty Name="Content" ColumnName="Content" />
+                <ScalarProperty Name="ShortContent" ColumnName="ShortContent" />
+                <ScalarProperty Name="DefaultImage" ColumnName="DefaultImage" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="StatusID" ColumnName="StatusID" />
+                <ScalarProperty Name="IsHomePage" ColumnName="IsHomePage" />
+                <ScalarProperty Name="InsertUserID" ColumnName="InsertUserID" />
+                <ScalarProperty Name="InsertDate" ColumnName="InsertDate" />
+                <ScalarProperty Name="DeleteUserID" ColumnName="DeleteUserID" />
+                <ScalarProperty Name="DeleteDate" ColumnName="DeleteDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Constant">
+            <EntityTypeMapping TypeName="NOAModel.Constant">
+              <MappingFragment StoreEntitySet="Constant">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="TypeID" ColumnName="TypeID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="TotalName" ColumnName="TotalName" />
+                <ScalarProperty Name="ParentID" ColumnName="ParentID" />
+                <ScalarProperty Name="LanguageID" ColumnName="LanguageID" />
+                <ScalarProperty Name="StatusID" ColumnName="StatusID" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="ShortName" ColumnName="ShortName" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="TopParent" ColumnName="TopParent" />
+                <ScalarProperty Name="PageOrder" ColumnName="PageOrder" />
+                <ScalarProperty Name="InsertUserID" ColumnName="InsertUserID" />
+                <ScalarProperty Name="InsertDate" ColumnName="InsertDate" />
+                <ScalarProperty Name="DeleteUserID" ColumnName="DeleteUserID" />
+                <ScalarProperty Name="DeleteDate" ColumnName="DeleteDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Contact">
+            <EntityTypeMapping TypeName="NOAModel.Contact">
+              <MappingFragment StoreEntitySet="Contact">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="LanguageID" ColumnName="LanguageID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Adress" ColumnName="Adress" />
+                <ScalarProperty Name="Tel" ColumnName="Tel" />
+                <ScalarProperty Name="Fax" ColumnName="Fax" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Link" ColumnName="Link" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="StatusID" ColumnName="StatusID" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Tel2" ColumnName="Tel2" />
+                <ScalarProperty Name="Email2" ColumnName="Email2" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ContactForm">
+            <EntityTypeMapping TypeName="NOAModel.ContactForm">
+              <MappingFragment StoreEntitySet="ContactForm">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+                <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Message" ColumnName="Message" />
+                <ScalarProperty Name="LanguageID" ColumnName="LanguageID" />
+                <ScalarProperty Name="InsertDate" ColumnName="InsertDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OpeningHours">
+            <EntityTypeMapping TypeName="NOAModel.OpeningHours">
+              <MappingFragment StoreEntitySet="OpeningHours">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Gun1" ColumnName="Gun1" />
+                <ScalarProperty Name="Gun2" ColumnName="Gun2" />
+                <ScalarProperty Name="Gun3" ColumnName="Gun3" />
+                <ScalarProperty Name="Gun4" ColumnName="Gun4" />
+                <ScalarProperty Name="Gun5" ColumnName="Gun5" />
+                <ScalarProperty Name="Gun6" ColumnName="Gun6" />
+                <ScalarProperty Name="Gun7" ColumnName="Gun7" />
+                <ScalarProperty Name="LanguageID" ColumnName="LanguageID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Page">
+            <EntityTypeMapping TypeName="NOAModel.Page">
+              <MappingFragment StoreEntitySet="Page">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="TypeID" ColumnName="TypeID" />
+                <ScalarProperty Name="ParentID" ColumnName="ParentID" />
+                <ScalarProperty Name="LanguageID" ColumnName="LanguageID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Content" ColumnName="Content" />
+                <ScalarProperty Name="PageUrl" ColumnName="PageUrl" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="StatusID" ColumnName="StatusID" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="InsertUserID" ColumnName="InsertUserID" />
+                <ScalarProperty Name="InsertDate" ColumnName="InsertDate" />
+                <ScalarProperty Name="DeleteUserID" ColumnName="DeleteUserID" />
+                <ScalarProperty Name="DeleteDate" ColumnName="DeleteDate" />
+                <ScalarProperty Name="IsDefault" ColumnName="IsDefault" />
+                <ScalarProperty Name="PageOrder" ColumnName="PageOrder" />
+                <ScalarProperty Name="ShortContent" ColumnName="ShortContent" />
+                <ScalarProperty Name="TotalName" ColumnName="TotalName" />
+                <ScalarProperty Name="FileURL" ColumnName="FileURL" />
+                <ScalarProperty Name="ConstantID" ColumnName="ConstantID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PageFile">
+            <EntityTypeMapping TypeName="NOAModel.PageFile">
+              <MappingFragment StoreEntitySet="PageFile">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="PageID" ColumnName="PageID" />
+                <ScalarProperty Name="FileName" ColumnName="FileName" />
+                <ScalarProperty Name="FileType" ColumnName="FileType" />
+                <ScalarProperty Name="FileURL" ColumnName="FileURL" />
+                <ScalarProperty Name="IsDefault" ColumnName="IsDefault" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="StatusID" ColumnName="StatusID" />
+                <ScalarProperty Name="InsertUserID" ColumnName="InsertUserID" />
+                <ScalarProperty Name="InsertDate" ColumnName="InsertDate" />
+                <ScalarProperty Name="DeleteUserID" ColumnName="DeleteUserID" />
+                <ScalarProperty Name="DeleteDate" ColumnName="DeleteDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Slider">
+            <EntityTypeMapping TypeName="NOAModel.Slider">
+              <MappingFragment StoreEntitySet="Slider">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="LanguageID" ColumnName="LanguageID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="URL" ColumnName="URL" />
+                <ScalarProperty Name="StatusID" ColumnName="StatusID" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="DeleteUserID" ColumnName="DeleteUserID" />
+                <ScalarProperty Name="DeleteDate" ColumnName="DeleteDate" />
+                <ScalarProperty Name="InsertUserID" ColumnName="InsertUserID" />
+                <ScalarProperty Name="InsertDate" ColumnName="InsertDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="NOAModel.Users">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Avatar" ColumnName="Avatar" />
+                <ScalarProperty Name="StatusID" ColumnName="StatusID" />
+                <ScalarProperty Name="WebSiteID" ColumnName="WebSiteID" />
+                <ScalarProperty Name="DefaultPage" ColumnName="DefaultPage" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="spGET_MENU" FunctionName="NOAModel.Store.spGET_MENU" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="NOAModel.spGET_MENU_Result">
+              <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ParentID" ColumnName="ParentID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="PageUrl" ColumnName="PageUrl" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
