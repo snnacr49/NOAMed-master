@@ -1,0 +1,139 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Root.master.cs" Inherits="RootMaster" %>
+
+<%-- DXCOMMENT: Page Root.master is a master page that contains the root layout (it includes Header, Cental Area, and Footer) --%>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <script>
+ 
+    </script>
+    <meta charset="UTF-8" />
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="Content/Site.css" />
+</head>
+<body runat="server" id="Body">
+    <form id="form1" runat="server">
+        <dx:ASPxSplitter ID="ASPxSplitter1" runat="server" AllowResize="False" Orientation="Vertical"
+            FullscreenMode="True" SeparatorVisible="False" Height="100%" Width="100%">
+            <Styles>
+                <Pane>
+                    <Paddings Padding="0px" />
+                    <border borderwidth="0px" />
+                </Pane>
+            </Styles>
+            <Panes>
+                <dx:SplitterPane Name="Header" AutoHeight="true">
+                    <PaneStyle CssClass="headerPane">
+                        <BorderBottom BorderWidth="1px" />
+                    </PaneStyle>
+                    <ContentCollection>
+                        <dx:SplitterContentControl ID="SplitterContentControl1" runat="server">
+                            <div class="headerTop">
+                                <div class="templateTitle">
+                                    <a id="TitleLink" href="~/" runat="server">Noa Grup Medical Admin Page</a>
+                                </div>
+
+                            </div>
+                            <div class="headerMenu">
+                                <%-- DXCOMMENT: Configure the header menu --%>
+                                <dx:ASPxMenu ID="ASPxMenu1" runat="server" ItemAutoWidth="False" Width="100%" ItemImagePosition="Top">
+                                    <Items>
+                                        <dx:MenuItem Text="Home" NavigateUrl="~/Messages.aspx">
+                                            <Image IconID="navigation_home_32x32">
+                                            </Image>
+                                            <PopOutImage IconID="businessobjects_bo_address_svg_16x16">
+                                            </PopOutImage>
+                                        </dx:MenuItem>
+                                        <dx:MenuItem Text="Coupun Management" NavigateUrl="~/Customer.aspx">
+                                            <Image IconID="actions_newtablestyle_32x32">
+                                            </Image>
+                                        </dx:MenuItem>
+                                        <dx:MenuItem Text="Slider Management" NavigateUrl="~/Slider.aspx">
+                                            <Image IconID="actions_importimage_32x32">
+                                            </Image>
+                                        </dx:MenuItem>
+                                        <dx:MenuItem Text="Messages" NavigateUrl="~/Messages.aspx">
+                                            <Image IconID="people_assigntome_32x32">
+                                            </Image>
+                                        </dx:MenuItem>
+                                        <dx:MenuItem NavigateUrl="~/Page.aspx" Text="Pages">
+                                            <Image IconID="richedit_differentfirstpage_32x32">
+                                            </Image>
+                                        </dx:MenuItem>
+                                        <dx:MenuItem Text="Page Management" NavigateUrl="~/HomeTabPage.aspx">
+                                            <Image IconID="richedit_richeditpagemargins_32x32">
+                                            </Image>
+                                        </dx:MenuItem>
+                                        <dx:MenuItem Text="Blogs" NavigateUrl="~/Blog.aspx">
+                                            <Image IconID="conditionalformatting_managerules_32x32">
+                                            </Image>
+                                        </dx:MenuItem>
+                                        <dx:MenuItem Text="Questions" NavigateUrl="~/Question.aspx">
+                                            <Image IconID="data_sortasc_32x32">
+                                            </Image>
+                                        </dx:MenuItem>
+                                        <dx:MenuItem Text="Videos" NavigateUrl="~/Videos.aspx">
+                                            <Image IconID="scheduling_time_32x32">
+                                            </Image>
+                                        </dx:MenuItem>
+                                        <dx:MenuItem Text="Contact Information" NavigateUrl="~/Contact.aspx">
+                                            <Image IconID="communication_phone_32x32">
+                                            </Image>
+                                        </dx:MenuItem>
+                                        <dx:MenuItem NavigateUrl="~/User.aspx" Text="Users">
+                                            <Image IconID="businessobjects_bouser_32x32">
+                                            </Image>
+                                        </dx:MenuItem>
+                                        <dx:MenuItem NavigateUrl="~/Media.aspx" Text="Social">
+                                            <Image IconID="media_media_32x32">
+                                            </Image>
+                                        </dx:MenuItem>
+                                        <dx:MenuItem NavigateUrl="~/Exit.aspx" Text="EXIT">
+                                            <Image IconID="actions_close_32x32">
+                                            </Image>
+                                        </dx:MenuItem>
+                                    </Items>
+                                    <Border BorderWidth="0px" />
+                                    <BorderTop BorderWidth="1px" />
+                                </dx:ASPxMenu>
+
+
+                            </div>
+                        </dx:SplitterContentControl>
+                    </ContentCollection>
+                </dx:SplitterPane>
+                <dx:SplitterPane Name="Content" MinSize="375px">
+                    <PaneStyle CssClass="mainContentPane">
+                        <BorderBottom BorderWidth="1px"></BorderBottom>
+                    </PaneStyle>
+                    <ContentCollection>
+                        <dx:SplitterContentControl ID="SplitterContentControl3" runat="server">
+                            <asp:ContentPlaceHolder ID="Content" runat="server">
+                            </asp:ContentPlaceHolder>
+                        </dx:SplitterContentControl>
+                    </ContentCollection>
+                    <PaneStyle BackColor="white">
+                        <BorderBottom BorderWidth="1px" />
+                    </PaneStyle>
+                </dx:SplitterPane>
+
+                <dx:SplitterPane Name="Footer" Size="125px" PaneStyle-CssClass="footerPane">
+                    <PaneStyle CssClass="footerPane"></PaneStyle>
+                    <ContentCollection>
+                        <dx:SplitterContentControl ID="SplitterContentControl4" runat="server">
+                            <div class="footerMenu">
+                            </div>
+                            <div class="copyright">
+                                <dx:ASPxLabel ID="ASPxLabel2" runat="server">
+                                </dx:ASPxLabel>
+                            </div>
+                        </dx:SplitterContentControl>
+                    </ContentCollection>
+                </dx:SplitterPane>
+            </Panes>
+        </dx:ASPxSplitter>
+
+        <%-- DXCOMMENT: Configure a datasource for the header menu --%>
+    </form>
+</body>
+</html>

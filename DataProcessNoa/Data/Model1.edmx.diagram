@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b24b3052c1034ce98483c6f41aa2405f" Name="Diagram1">
+        <EntityTypeShape EntityType="NOAModel.Users" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NOAModel.Customer" Width="1.5" PointX="6.25" PointY="1.375" />
+        <EntityTypeShape EntityType="NOAModel.CustomerVoucher" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="NOAModel.CustomerVoucherList" Width="1.5" PointX="3.375" PointY="0.75" />
+        <EntityTypeShape EntityType="NOAModel.ContactForm" Width="1.5" PointX="0.75" PointY="3.75" />
+        <EntityTypeShape EntityType="NOAModel.Video" Width="1.5" PointX="3.375" PointY="4.75" />
+        <EntityTypeShape EntityType="NOAModel.Social" Width="1.5" PointX="5.375" PointY="5.75" />
+        <EntityTypeShape EntityType="NOAModel.HomeTabPage" Width="1.5" PointX="7.375" PointY="5.75" />
+        <EntityTypeShape EntityType="NOAModel.Contact" Width="1.5" PointX="3.375" PointY="8.75" />
+        <EntityTypeShape EntityType="NOAModel.Blog" Width="1.5" PointX="9.375" PointY="5.75" />
+        <EntityTypeShape EntityType="NOAModel.Question" Width="1.5" PointX="0.75" PointY="7.75" />
+        <EntityTypeShape EntityType="NOAModel.Slider" Width="1.5" PointX="5.375" PointY="10.75" />
+        <EntityTypeShape EntityType="NOAModel.Page" Width="1.5" PointX="7.375" PointY="10.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

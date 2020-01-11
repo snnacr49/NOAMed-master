@@ -5,25 +5,29 @@ VisualStudioVersion = 16.0.29519.87
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web", "Web\Web.csproj", "{11F73CF3-A7E1-4A15-BAF2-443A3114EB42}"
 EndProject
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "WebSites(1)", "C:\Users\Sinan\source\WebSites\WebSites\", "{50565425-9273-4203-93FC-5445ED836376}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataProcessNoa", "DataProcessNoa\DataProcessNoa.csproj", "{5870C6AB-BB2B-44F3-9598-5AF6ED16B61A}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "NOAMedAdmin", "NOAMedAdmin\", "{8175F2A1-8D2B-4E29-8D3A-B4C3E67A6CD6}"
 	ProjectSection(WebsiteProperties) = preProject
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5.2"
-		Debug.AspNetCompiler.VirtualPath = "/localhost_55137"
-		Debug.AspNetCompiler.PhysicalPath = "C:\Users\Sinan\source\WebSites\WebSites\"
-		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_55137\"
+		ProjectReferences = "{5870c6ab-bb2b-44f3-9598-5af6ed16b61a}|DataProcessNoa.dll;"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_60655"
+		Debug.AspNetCompiler.PhysicalPath = "NOAMedAdmin\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_60655\"
 		Debug.AspNetCompiler.Updateable = "true"
 		Debug.AspNetCompiler.ForceOverwrite = "true"
 		Debug.AspNetCompiler.FixedNames = "false"
 		Debug.AspNetCompiler.Debug = "True"
-		Release.AspNetCompiler.VirtualPath = "/localhost_55137"
-		Release.AspNetCompiler.PhysicalPath = "C:\Users\Sinan\source\WebSites\WebSites\"
-		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_55137\"
+		Release.AspNetCompiler.VirtualPath = "/localhost_60655"
+		Release.AspNetCompiler.PhysicalPath = "NOAMedAdmin\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_60655\"
 		Release.AspNetCompiler.Updateable = "true"
 		Release.AspNetCompiler.ForceOverwrite = "true"
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
-		VWDPort = "55137"
-		SlnRelativePath = "C:\Users\Sinan\source\WebSites\WebSites\"
+		VWDPort = "60655"
+		SlnRelativePath = "NOAMedAdmin\"
+		DefaultWebSiteLanguage = "Visual C#"
 	EndProjectSection
 EndProject
 Global
@@ -36,10 +40,14 @@ Global
 		{11F73CF3-A7E1-4A15-BAF2-443A3114EB42}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{11F73CF3-A7E1-4A15-BAF2-443A3114EB42}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{11F73CF3-A7E1-4A15-BAF2-443A3114EB42}.Release|Any CPU.Build.0 = Release|Any CPU
-		{50565425-9273-4203-93FC-5445ED836376}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{50565425-9273-4203-93FC-5445ED836376}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{50565425-9273-4203-93FC-5445ED836376}.Release|Any CPU.ActiveCfg = Debug|Any CPU
-		{50565425-9273-4203-93FC-5445ED836376}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{5870C6AB-BB2B-44F3-9598-5AF6ED16B61A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5870C6AB-BB2B-44F3-9598-5AF6ED16B61A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5870C6AB-BB2B-44F3-9598-5AF6ED16B61A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5870C6AB-BB2B-44F3-9598-5AF6ED16B61A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8175F2A1-8D2B-4E29-8D3A-B4C3E67A6CD6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8175F2A1-8D2B-4E29-8D3A-B4C3E67A6CD6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8175F2A1-8D2B-4E29-8D3A-B4C3E67A6CD6}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{8175F2A1-8D2B-4E29-8D3A-B4C3E67A6CD6}.Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
